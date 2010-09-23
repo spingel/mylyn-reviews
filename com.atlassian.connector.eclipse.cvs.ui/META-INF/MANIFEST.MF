@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Atlassian Connector for Eclipse CVS UI
+Bundle-SymbolicName: com.atlassian.connector.eclipse.cvs.ui;singleton:=true
+Bundle-Version: 2.3.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.atlassian.connector.eclipse.team.ui,
+ org.eclipse.mylyn.commons.core,
+ org.eclipse.team.core,
+ org.eclipse.core.filesystem,
+ org.eclipse.ui.ide,
+ org.eclipse.core.resources,
+ org.eclipse.ui.editors,
+ org.eclipse.compare,
+ org.eclipse.jface.text,
+ org.eclipse.mylyn.commons.net,
+ org.eclipse.team.cvs.core,
+ org.eclipse.team.cvs.ui,
+ org.jetbrains.annotations;resolution:=optional,
+ com.atlassian.connector.eclipse.model;bundle-version="2.2.0"
+Bundle-ActivationPolicy: lazy
+Export-Package: com.atlassian.connector.eclipse.internal.cvs.ui;x-internal:=true
+Bundle-Vendor: Atlassian
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
