@@ -32,7 +32,6 @@ import org.eclipse.jface.text.source.LineRange;
 import org.eclipse.mylyn.commons.core.StatusHandler;
 import org.eclipse.mylyn.internal.provisional.commons.ui.WorkbenchUtil;
 import org.eclipse.ui.IEditorInput;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Abstract class to deal with adding comments to a review
@@ -52,8 +51,7 @@ public abstract class AbstractAddCommentAction extends AbstractReviewAction {
 
 		private final LineRange commentLines;
 
-		public GetCrucibleFileJob(String name, @NotNull IEditorInput editorInput, LineRange commentLines,
-				@NotNull Review review) {
+		public GetCrucibleFileJob(String name, IEditorInput editorInput, LineRange commentLines, Review review) {
 			super(name);
 			this.editorInput = editorInput;
 			this.commentLines = commentLines;

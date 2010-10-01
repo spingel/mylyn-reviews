@@ -11,37 +11,29 @@
 
 package com.atlassian.connector.eclipse.internal.crucible.ui.wizards;
 
-import com.atlassian.connector.eclipse.fisheye.ui.preferences.FishEyePreferenceContextData;
-import com.atlassian.connector.eclipse.fisheye.ui.preferences.SourceRepositoryMappingPreferencePage;
-
-import org.eclipse.jface.preference.PreferenceDialog;
-import org.eclipse.jface.window.Window;
 import org.eclipse.mylyn.tasks.core.TaskRepository;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.eclipse.ui.dialogs.PreferencesUtil;
 
 public class DefineRepositoryMappingButton {
 
-	private final AbstractCrucibleWizardPage page;
+//	private final AbstractCrucibleWizardPage page;
 
 	private final Composite composite;
 
-	private final TaskRepository repository;
+//	private final TaskRepository repository;
 
 	private final Control defineMappingButton;
 
-	private String missingMapping;
+//	private String missingMapping; //N.A. to open source
 
 	public DefineRepositoryMappingButton(final AbstractCrucibleWizardPage page, Composite composite,
 			final TaskRepository repository) {
-		this.page = page;
+//		this.page = page;
 		this.composite = composite;
-		this.repository = repository;
+//		this.repository = repository;
 
 		this.defineMappingButton = createDefineRepositoryMappingsButton();
 
@@ -52,7 +44,7 @@ public class DefineRepositoryMappingButton {
 	}
 
 	public void setMissingMapping(String mapping) {
-		this.missingMapping = mapping;
+//		this.missingMapping = mapping;  //N.A. to open source
 	}
 
 	private Control createDefineRepositoryMappingsButton() {
@@ -60,20 +52,21 @@ public class DefineRepositoryMappingButton {
 		Button updateData = new Button(composite, SWT.PUSH);
 		updateData.setText("Define Repository Mappings");
 
-		updateData.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				FishEyePreferenceContextData data = page.isPageComplete() ? null : new FishEyePreferenceContextData(
-						missingMapping == null ? "" : missingMapping, repository);
-				final PreferenceDialog prefDialog = PreferencesUtil.createPreferenceDialogOn(page.getShell(),
-						SourceRepositoryMappingPreferencePage.ID, null, data);
-				if (prefDialog != null) {
-					if (prefDialog.open() == Window.OK) {
-						page.validatePage();
-					}
-				}
-			}
-		});
+		//Removed: Not applicable to open source
+//		updateData.addSelectionListener(new SelectionAdapter() {
+//			@Override
+//			public void widgetSelected(SelectionEvent e) {
+//				FishEyePreferenceContextData data = page.isPageComplete() ? null : new FishEyePreferenceContextData(
+//						missingMapping == null ? "" : missingMapping, repository);
+//				final PreferenceDialog prefDialog = PreferencesUtil.createPreferenceDialogOn(page.getShell(),
+//						SourceRepositoryMappingPreferencePage.ID, null, data);
+//				if (prefDialog != null) {
+//					if (prefDialog.open() == Window.OK) {
+//						page.validatePage();
+//					}
+//				}
+//			}
+//		});
 		return updateData;
 	}
 }

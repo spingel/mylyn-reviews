@@ -58,8 +58,6 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.views.navigator.ResourceComparator;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -187,12 +185,11 @@ public class SelectChangesetsFromCruciblePage extends AbstractCrucibleWizardPage
 
 	private final TaskRepository taskRepository;
 
-	public SelectChangesetsFromCruciblePage(@NotNull TaskRepository repository) {
+	public SelectChangesetsFromCruciblePage(TaskRepository repository) {
 		this(repository, new TreeSet<ICustomChangesetLogEntry>());
 	}
 
-	public SelectChangesetsFromCruciblePage(@NotNull TaskRepository repository,
-			@Nullable SortedSet<ICustomChangesetLogEntry> logEntries) {
+	public SelectChangesetsFromCruciblePage(TaskRepository repository, SortedSet<ICustomChangesetLogEntry> logEntries) {
 		super("crucibleChangesets"); //$NON-NLS-1$
 		setTitle("Select Changesets from Crucible");
 		setDescription("Select the changesets that should be included in the review. Changesets information is provided by Crucible.");

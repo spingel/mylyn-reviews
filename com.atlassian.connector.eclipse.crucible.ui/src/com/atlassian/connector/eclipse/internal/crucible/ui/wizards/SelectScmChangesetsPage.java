@@ -62,8 +62,6 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.views.navigator.ResourceComparator;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -227,12 +225,11 @@ public class SelectScmChangesetsPage extends AbstractCrucibleWizardPage {
 
 	private DefineRepositoryMappingButton mappingButton;
 
-	public SelectScmChangesetsPage(@NotNull TaskRepository repository) {
+	public SelectScmChangesetsPage(TaskRepository repository) {
 		this(repository, new TreeSet<ICustomChangesetLogEntry>());
 	}
 
-	public SelectScmChangesetsPage(@NotNull TaskRepository repository,
-			@Nullable SortedSet<ICustomChangesetLogEntry> logEntries) {
+	public SelectScmChangesetsPage(TaskRepository repository, SortedSet<ICustomChangesetLogEntry> logEntries) {
 		super("crucibleChangesets"); //$NON-NLS-1$
 		setTitle("Select Changesets");
 		setDescription("Select the changesets that should be included in the review.");

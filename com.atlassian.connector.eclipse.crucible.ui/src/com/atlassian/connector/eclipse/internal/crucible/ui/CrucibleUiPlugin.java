@@ -19,7 +19,6 @@ import org.eclipse.jface.dialogs.MessageDialogWithToggle;
 import org.eclipse.mylyn.tasks.core.TaskRepository;
 import org.eclipse.mylyn.tasks.ui.TasksUi;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.jetbrains.annotations.Nullable;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -187,11 +186,10 @@ public class CrucibleUiPlugin extends AbstractUIPlugin {
 		return this.avatarImages;
 	}
 
-	public void updateLastSelectedProject(TaskRepository repository, @Nullable String projectKey) {
+	public void updateLastSelectedProject(TaskRepository repository, String projectKey) {
 		repository.setProperty(DEFAULT_PROJECT, projectKey);
 	}
 
-	@Nullable
 	public String getLastSelectedProjectKey(TaskRepository repository) {
 		return repository.getProperty(DEFAULT_PROJECT);
 	}

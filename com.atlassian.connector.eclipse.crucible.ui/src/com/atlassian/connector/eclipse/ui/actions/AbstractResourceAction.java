@@ -30,8 +30,6 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.BaseSelectionListenerAction;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -141,7 +139,6 @@ public abstract class AbstractResourceAction extends BaseSelectionListenerAction
 		return null;
 	}
 
-	@Nullable
 	private LineRange getJavaEditorSelection(ISelection selection) {
 		IEditorPart editorPart = getActiveEditor();
 		IEditorInput editorInput = getEditorInputFromSelection(selection);
@@ -151,6 +148,6 @@ public abstract class AbstractResourceAction extends BaseSelectionListenerAction
 		return null;
 	}
 
-	protected abstract void processResources(@NotNull List<ResourceEditorBean> selection, final Shell shell);
+	protected abstract void processResources(List<ResourceEditorBean> selection, final Shell shell);
 
 }

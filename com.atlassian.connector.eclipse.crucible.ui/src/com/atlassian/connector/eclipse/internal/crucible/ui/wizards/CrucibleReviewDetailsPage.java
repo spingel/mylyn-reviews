@@ -49,7 +49,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -363,7 +362,6 @@ public class CrucibleReviewDetailsPage extends WizardPage {
 		return false;
 	}
 
-	@Nullable
 	public Review getReview() {
 		final User author = getSelectedAuthor();
 		final BasicProject project = getSelectedProject();
@@ -413,7 +411,6 @@ public class CrucibleReviewDetailsPage extends WizardPage {
 		return startReview.getSelection();
 	}
 
-	@Nullable
 	BasicProject getSelectedProject() {
 		if (projectsComboViewer == null) {
 			return null;

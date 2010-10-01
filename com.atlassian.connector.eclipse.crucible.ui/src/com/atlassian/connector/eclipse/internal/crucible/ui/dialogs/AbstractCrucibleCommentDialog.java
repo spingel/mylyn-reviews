@@ -54,7 +54,6 @@ import org.eclipse.ui.contexts.IContextActivation;
 import org.eclipse.ui.contexts.IContextService;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.handlers.IHandlerService;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -102,7 +101,6 @@ public abstract class AbstractCrucibleCommentDialog extends ProgressDialog {
 		customFieldSelections = new HashMap<String, CustomField>();
 	}
 
-	@Nullable
 	public Review getReview() {
 		return review;
 	}

@@ -42,7 +42,6 @@ import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -104,7 +103,7 @@ public class ResourceSelectionTree extends Composite {
 	 * @param settingsProvider
 	 *            settings provider to store/restore resources tree mode (can be null)
 	 */
-	public ResourceSelectionTree(Composite parent, String label, @NotNull List<DecoratedResource> resourcesToShow,
+	public ResourceSelectionTree(Composite parent, String label, List<DecoratedResource> resourcesToShow,
 			IToolbarControlCreator toolbarControlCreator, ITreeViewModeSettingProvider settingsProvider) {
 		super(parent, SWT.NONE);
 		this.label = label;
@@ -576,7 +575,6 @@ public class ResourceSelectionTree extends Composite {
 			return workbenchLabelProvider.getImage(((DecoratedResource) element).getResource());
 		}
 
-		@NotNull
 		private String getTextForResource(DecoratedResource decoratedResource) {
 			String text = null;
 			IResource resource = decoratedResource.getResource();
@@ -633,7 +631,7 @@ public class ResourceSelectionTree extends Composite {
 		void setTreeViewMode(TreeViewMode mode);
 	}
 
-	public void setResources(@NotNull List<DecoratedResource> resourcesToShow) {
+	public void setResources(List<DecoratedResource> resourcesToShow) {
 		this.resourcesToShow = resourcesToShow;
 
 		compressedFolders = null;

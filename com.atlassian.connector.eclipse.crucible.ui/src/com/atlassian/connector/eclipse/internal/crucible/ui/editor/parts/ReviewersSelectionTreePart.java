@@ -14,6 +14,7 @@ package com.atlassian.connector.eclipse.internal.crucible.ui.editor.parts;
 import com.atlassian.connector.eclipse.internal.crucible.ui.commons.CrucibleUserLabelProvider;
 import com.atlassian.connector.eclipse.ui.viewers.ArrayTreeContentProvider;
 import com.atlassian.theplugin.commons.crucible.api.model.User;
+
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.viewers.CheckStateChangedEvent;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
@@ -28,7 +29,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.ui.dialogs.FilteredTree;
 import org.eclipse.ui.dialogs.PatternFilter;
-import org.jetbrains.annotations.NotNull;
+
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -70,7 +71,7 @@ public class ReviewersSelectionTreePart {
 
 	}
 
-	public ReviewersSelectionTreePart(@NotNull Set<User> selectedUsers, @NotNull Collection<User> allReviewers) {
+	public ReviewersSelectionTreePart(Set<User> selectedUsers, Collection<User> allReviewers) {
 		selectedReviewers = selectedUsers == null ? new HashSet<User>() : new HashSet<User>(selectedUsers);
 		this.allReviewers = new HashSet<User>(allReviewers);
 	}
@@ -124,7 +125,7 @@ public class ReviewersSelectionTreePart {
 		return composite;
 	}
 
-	public void setAllReviewers(@NotNull Collection<User> allReviewers) {
+	public void setAllReviewers(Collection<User> allReviewers) {
 		this.allReviewers.clear();
 		this.allReviewers.addAll(allReviewers);
 		tree.getViewer().setInput(this.allReviewers);

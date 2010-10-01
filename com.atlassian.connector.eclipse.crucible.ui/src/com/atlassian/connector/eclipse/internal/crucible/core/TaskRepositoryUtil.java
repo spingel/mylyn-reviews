@@ -14,8 +14,6 @@ package com.atlassian.connector.eclipse.internal.crucible.core;
 import com.atlassian.theplugin.commons.util.MiscUtil;
 
 import org.eclipse.mylyn.tasks.core.TaskRepository;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.net.URI;
 import java.util.Map;
@@ -37,18 +35,15 @@ public final class TaskRepositoryUtil {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	@NotNull
-	public static Map<String, String> getScmRepositoryMappings(@NotNull TaskRepository taskRepository) {
+	public static Map<String, String> getScmRepositoryMappings(TaskRepository taskRepository) {
 		String property = taskRepository.getProperty(TASK_REPOSITORY_SCM_MAPPINGS_KEY);
 		return MiscUtil.buildHashMap();
 	}
 
-	public static void setScmRepositoryMappings(@NotNull TaskRepository taskRepository, Map<String, String> mappings) {
+	public static void setScmRepositoryMappings(TaskRepository taskRepository, Map<String, String> mappings) {
 	}
 
-	@Nullable
-	public static Map.Entry<String, String> getMatchingSourceRepository(@NotNull Map<String, String> repositories,
-			@NotNull String scmPath) {
+	public static Map.Entry<String, String> getMatchingSourceRepository(Map<String, String> repositories, String scmPath) {
 
 		Map.Entry<String, String> matching = null;
 		for (Map.Entry<String, String> prefix : repositories.entrySet()) {
@@ -72,9 +67,7 @@ public final class TaskRepositoryUtil {
 		return matching;
 	}
 
-	@Nullable
-	public static Map.Entry<String, String> getNamedSourceRepository(@NotNull Map<String, String> repositories,
-			@NotNull String name) {
+	public static Map.Entry<String, String> getNamedSourceRepository(Map<String, String> repositories, String name) {
 		for (Map.Entry<String, String> entry : repositories.entrySet()) {
 			if (entry.getValue().equals(name)) {
 				return entry;

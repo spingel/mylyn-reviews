@@ -29,7 +29,6 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.mylyn.commons.core.StatusHandler;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -44,7 +43,7 @@ public abstract class AbstractReviewFromResourcesAction extends AbstractResource
 	}
 
 	@Override
-	protected void processResources(@NotNull List<ResourceEditorBean> selection, final Shell shell) {
+	protected void processResources(List<ResourceEditorBean> selection, final Shell shell) {
 
 		final Set<ITeamUiResourceConnector> connectors = new HashSet<ITeamUiResourceConnector>();
 

@@ -29,7 +29,6 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ImageHyperlink;
 import org.eclipse.ui.forms.widgets.Section;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -85,7 +84,7 @@ public class VersionedCommentPart extends AbstractCommentPart<CommentPart> {
 		return text;
 	}
 
-	private String getLineInfo(IntRanges intRanges, @Nullable String revision) {
+	private String getLineInfo(IntRanges intRanges, String revision) {
 		String revStr = (revision != null) ? ("Rev: " + revision + ", ") : "";
 		if (intRanges.getTotalMin() == intRanges.getTotalMax()) {
 			return revStr + "Line: " + intRanges.getTotalMin();

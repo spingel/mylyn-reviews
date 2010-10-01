@@ -13,7 +13,6 @@ package com.atlassian.connector.commons.crucible.api.model;
 
 import com.atlassian.theplugin.commons.crucible.api.model.Comment;
 import com.atlassian.theplugin.commons.crucible.api.model.VersionedComment;
-import org.jetbrains.annotations.Nullable;
 
 public final class ReviewModelUtil {
 
@@ -23,7 +22,6 @@ public final class ReviewModelUtil {
 
 	// VersionedComment -> Coment -> Comment -> ***
 	// GeneralComment -> Coment -> Comment -> ***
-	@Nullable
 	public static VersionedComment getParentVersionedComment(Comment comment) {
 		while (comment != null && !(comment instanceof VersionedComment)) {
 			comment = comment.getParentComment();

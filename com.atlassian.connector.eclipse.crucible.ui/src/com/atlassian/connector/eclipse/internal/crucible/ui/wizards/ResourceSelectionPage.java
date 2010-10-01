@@ -43,7 +43,6 @@ import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
-import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -67,8 +66,8 @@ public class ResourceSelectionPage extends AbstractCrucibleWizardPage {
 
 	private ResourceSelectionTree resourceSelectionTree;
 
-	public ResourceSelectionPage(@NotNull TaskRepository taskRepository,
-			@NotNull ITeamUiResourceConnector teamConnector, @NotNull List<IResource> roots) {
+	public ResourceSelectionPage(TaskRepository taskRepository, ITeamUiResourceConnector teamConnector,
+			List<IResource> roots) {
 		super("Add Resources to Review");
 		this.taskRepository = taskRepository;
 		setTitle("Add Resources to Review");

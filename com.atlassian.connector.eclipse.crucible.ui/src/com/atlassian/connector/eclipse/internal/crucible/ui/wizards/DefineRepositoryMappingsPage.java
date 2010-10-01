@@ -11,10 +11,7 @@
 
 package com.atlassian.connector.eclipse.internal.crucible.ui.wizards;
 
-import com.atlassian.connector.eclipse.fisheye.ui.FishEyeUiUtil;
-import com.atlassian.connector.eclipse.fisheye.ui.preferences.SourceRepostioryMappingEditor;
 import com.atlassian.connector.eclipse.internal.crucible.core.TaskRepositoryUtil;
-import com.atlassian.connector.eclipse.internal.crucible.ui.CrucibleUiPlugin;
 import com.atlassian.connector.eclipse.team.ui.AtlassianTeamUiPlugin;
 import com.atlassian.connector.eclipse.team.ui.ITeamUiResourceConnector;
 import com.atlassian.connector.eclipse.team.ui.LocalStatus;
@@ -23,21 +20,15 @@ import com.atlassian.theplugin.commons.util.MiscUtil;
 
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.Dialog;
-import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.mylyn.tasks.core.TaskRepository;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
 
-import java.io.IOException;
 import java.util.Collection;
 import java.util.Set;
 
@@ -45,7 +36,7 @@ public class DefineRepositoryMappingsPage extends WizardPage {
 
 	private final TaskRepository taskRepository;
 
-	private SourceRepostioryMappingEditor mappingEditor;
+//	private SourceRepostioryMappingEditor mappingEditor;
 
 	private Set<IResource> resources;
 
@@ -76,19 +67,19 @@ public class DefineRepositoryMappingsPage extends WizardPage {
 	public Composite createRepositoryMappingComposite(Composite ancestor, int hSizeHint) {
 		final Composite parent = new Composite(ancestor, SWT.NONE);
 
-		mappingEditor = new SourceRepostioryMappingEditor(parent, taskRepository);
-		mappingEditor.addModifyListener(new ModifyListener() {
-			public void modifyText(ModifyEvent event) {
-				try {
-					FishEyeUiUtil.setScmRepositoryMappings(mappingEditor.getMapping());
-				} catch (IOException e) {
-					ErrorDialog.openError(getShell(), "", "Error while saving FishEye mapping configuration",
-							new Status(IStatus.ERROR, CrucibleUiPlugin.PLUGIN_ID, e.getMessage(), e));
-				}
-				validatePage();
-			}
-		});
-		mappingEditor.setRepositoryMappings(FishEyeUiUtil.getActiveScmRepositoryMappings());
+//		mappingEditor = new SourceRepostioryMappingEditor(parent, taskRepository);
+//		mappingEditor.addModifyListener(new ModifyListener() {
+//			public void modifyText(ModifyEvent event) {
+//				try {
+//					FishEyeUiUtil.setScmRepositoryMappings(mappingEditor.getMapping());
+//				} catch (IOException e) {
+//					ErrorDialog.openError(getShell(), "", "Error while saving FishEye mapping configuration",
+//							new Status(IStatus.ERROR, CrucibleUiPlugin.PLUGIN_ID, e.getMessage(), e));
+//				}
+//				validatePage();
+//			}
+//		});
+//		mappingEditor.setRepositoryMappings(FishEyeUiUtil.getActiveScmRepositoryMappings());
 
 		return parent;
 	}
